@@ -144,7 +144,7 @@ Content-Type: application/json
   "name": "All workers",
   "type": "email",
   "isForAllAlerts": false,
-  "emails": ["alex@company.com", "kos@gmail.com"]
+  "emails": ["alex@company.com", "kos@email.com"]
 }
 ```
 
