@@ -1,0 +1,42 @@
+{
+  "menuName": "States",
+  "categories": [
+    {
+      "id": 1,
+      "name": "Work",
+      "color": "#00C94E"
+    },
+    {
+      "id": 2,
+      "name": "Planed downtime",
+      "color": "#DDC65F"
+    },
+    {
+      "id": 3,
+      "name": "Unplanned downtime",
+      "color": "#FF4F4F"
+    }
+  ],
+  "reasons": [
+    {
+      "id": 1,
+      "name": "Normal work",
+      "parentCategoryId": 1
+    },
+    {
+      "id": 2,
+      "name": "Cleaning",
+      "parentCategoryId": 2
+    },
+    {
+      "id": 3,
+      "name": "Setup",
+      "parentCategoryId": 2
+    },
+    {
+      "id": 3,
+      "name": "Poor electrical connections",
+      "parentCategoryId": 3
+    }
+  ]
+}

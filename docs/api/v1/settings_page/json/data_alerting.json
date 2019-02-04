@@ -1,0 +1,12 @@
+{
+  "menuName": "Alerting",
+  "channels": [
+    {
+      "id": 1,
+      "name": "All workers",
+      "type": "email",
+      "isForAllAlerts": false,
+      "emails": ["alex@company.com", "kos@gmail.com"]
+    }
+  ]
+}

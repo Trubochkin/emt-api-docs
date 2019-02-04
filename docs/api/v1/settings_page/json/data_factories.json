@@ -1,0 +1,15 @@
+{
+  "menuName": "Factories",
+  "factories": [
+    {
+      "id": 1,
+      "name": "Factory 1",
+      "comment": ""
+    },
+    {
+      "id": 2,
+      "name": "Factory 2",
+      "comment": ""
+    }
+  ]
+}

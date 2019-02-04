@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Страница настроек | API-Docs-QiVisor</title>
+    <meta name="description" content="Описание API сервера веб приложения QiVisor">
+    <link rel="icon" href="images/logo_green.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.efbc0ddf.css" as="style"><link rel="preload" href="/assets/js/app.1be7a2d9.js" as="script"><link rel="preload" href="/assets/js/8.1eb58caa.js" as="script"><link rel="preload" href="/assets/js/3.dd235efd.js" as="script"><link rel="prefetch" href="/assets/js/10.7ff1f219.js"><link rel="prefetch" href="/assets/js/11.08482f29.js"><link rel="prefetch" href="/assets/js/2.41bc298c.js"><link rel="prefetch" href="/assets/js/4.68a4db8a.js"><link rel="prefetch" href="/assets/js/5.27a8af54.js"><link rel="prefetch" href="/assets/js/6.f23e4728.js"><link rel="prefetch" href="/assets/js/7.a3b354ac.js"><link rel="prefetch" href="/assets/js/9.cf90975f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.efbc0ddf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">API-Docs-QiVisor</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/overview/intro.html" class="nav-link">API Docs</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/overview/intro.html" class="nav-link">API Docs</a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading"><span>Overview</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>API</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/api/authorization.html" class="sidebar-link">Авторизация</a></li><li><a href="/api/login_page.html" class="sidebar-link">Страница входа</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/api/login_page.html#аутентификация-поnьзоватеnя" class="sidebar-link">Аутентификация пользователя</a></li><li class="sidebar-sub-header"><a href="/api/login_page.html#восстановnение-пароnя" class="sidebar-link">Восстановление пароля</a></li><li class="sidebar-sub-header"><a href="/api/login_page.html#создание-нового-поnьзоватеnя" class="sidebar-link">Создание нового пользователя</a></li></ul></li><li><a href="/api/settings_page.html" class="active sidebar-link">Страница настроек</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/api/settings_page.html#меню-factories" class="sidebar-link">Меню Factories</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="страница-настроек"><a href="#страница-настроек" aria-hidden="true" class="header-anchor">#</a> Страница настроек</h1> <h2 id="меню-factories"><a href="#меню-factories" aria-hidden="true" class="header-anchor">#</a> Меню Factories</h2> <p><img src="/images/page_settings/factories.png" alt="settings_page"></p> <div data-v-20abebec><code data-type="get" class="req" data-v-20abebec> /settings/factories </code></div> <p><code>Описание:</code> При поподании в меню &quot;Factories&quot; приложение запрашивает список доступных фабрик</p> <p><strong>Ответ 200:</strong></p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;menuName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Factories&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;factories&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Factory 1&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;comment&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Factory 2&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;comment&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>Ответ 401:</strong></p> <table><thead><tr><th>Таблицы</th> <th style="text-align:center">Это</th> <th style="text-align:right">Круто</th></tr></thead> <tbody><tr><td>третья колонка</td> <td style="text-align:center">выровнена по правому краю</td> <td style="text-align:right">$1600</td></tr> <tr><td>вторая колонка</td> <td style="text-align:center">выровнена по центру</td> <td style="text-align:right">$12</td></tr> <tr><td>полосатые строки</td> <td style="text-align:center">приятно смотрятся</td> <td style="text-align:right">$1</td></tr></tbody></table> <div class="language-js extra-class"><pre class="language-js"><code><span class="token constant">PUT</span> <span class="token punctuation">:</span> <span class="token operator">/</span>api<span class="token operator">/</span>v1<span class="token operator">/</span>account<span class="token operator">/</span>password
+<span class="token operator">...</span>
+data <span class="token punctuation">:</span> <span class="token punctuation">{</span>
+<span class="token string">&quot;email&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;email@example.com&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/api/login_page.html" class="prev">
+          Страница входа
+        </a></span> <!----></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.1be7a2d9.js" defer></script><script src="/assets/js/8.1eb58caa.js" defer></script><script src="/assets/js/3.dd235efd.js" defer></script>
+  </body>
+</html>

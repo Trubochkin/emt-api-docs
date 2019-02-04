@@ -1,0 +1,30 @@
+{
+  "menuName": "Units",
+  "units": [
+    {
+      "id": 1,
+      "name": "Unit 1",
+      "comment": "comment text for Unit 1"
+    },
+    {
+      "id": 2,
+      "name": "Unit 2",
+      "comment": "comment text for Unit 2"
+    },
+    {
+      "id": 3,
+      "name": "Unit 3",
+      "comment": "comment text for Unit 3"
+    },
+    {
+      "id": 4,
+      "name": "Unit 4",
+      "comment": "comment text for Unit 4"
+    },
+    {
+      "id": 5,
+      "name": "Unit 5",
+      "comment": "comment text for Unit 5"
+    }
+  ]
+}

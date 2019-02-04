@@ -1,0 +1,25 @@
+{
+  "menuName": "Processes",
+  "processes": [
+    {
+      "id": 1,
+      "name": "Process 1",
+      "comment": "comment text for Process 1"
+    },
+    {
+      "id": 2,
+      "name": "Process 2",
+      "comment": "comment text for Process 2"
+    },
+    {
+      "id": 3,
+      "name": "Process 3",
+      "comment": "comment text for Process 3"
+    },
+    {
+      "id": 4,
+      "name": "Process 4",
+      "comment": "comment text for Process 4"
+    }
+  ]
+}

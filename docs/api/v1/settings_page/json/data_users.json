@@ -1,0 +1,11 @@
+{
+  "menuName": "Users",
+  "users": [
+    {
+      "id": 1,
+      "userName": "David Henry",
+      "email": "david.henry@email.com",
+      "role": "Super user"
+    }
+  ]
+}
