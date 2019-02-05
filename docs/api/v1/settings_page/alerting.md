@@ -22,7 +22,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
 
 {
-  "channels": [
+  "alertingchannels": [
     {
       "id": 1,
       "name": "All workers",

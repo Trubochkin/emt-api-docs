@@ -106,7 +106,7 @@ Content-Type: application/json; charset=UTF-8
     },
   ],
 
-  "channels": [
+  "alertingchannels": [
     {
       "id": 1,
       "name": "All workers",
