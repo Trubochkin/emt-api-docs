@@ -5,7 +5,7 @@
 
 <req method="get" path="/allsettings" isArrow>
 
-Получение всех параметров всех меню настроек одним запросом. В теле ответа передаётся массив объектов, где каждый объект относится к отдельному пункту меню. Более детальное описание по каждому меню находится в следующих разделах.
+Получение всех параметров всех меню настроек одним запросом. Тело ответа содержит объект с параметрами всех настроек. Более детальное описание по каждому меню находится в следующих разделах.
 
 **Пример запроса:**
 
@@ -19,36 +19,34 @@ GET {baseURL}/allsettings HTTP/1.1
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
 
-[
-  {
-    "factories": [
-      {
-        "id": 1,
-        "name": "Factory 1",
-        "comment": ""
-      },
-    ]
-  },
-  {
-    "processes": [
-      {
-        "id": 1,
-        "name": "Process 1",
-        "comment": "comment text for Process 1"
-      },
-    ]
-  },
-  {
-    "units": [
-      {
-        "id": 1,
-        "name": "Unit 1",
-        "comment": "comment text for Unit 1"
-      },
-    ]
-  },
-  {
-    "products": [
+
+{
+  "factories": [
+    {
+      "id": 1,
+      "name": "Factory 1",
+      "comment": ""
+    },
+  ],
+
+  "processes": [
+    {
+      "id": 1,
+      "name": "Process 1",
+      "comment": "comment text for Process 1"
+    },
+  ],
+
+  "units": [
+    {
+      "id": 1,
+      "name": "Unit 1",
+      "comment": "comment text for Unit 1"
+    },
+  ],
+
+  "products": {
+    "items": [
       {
         "id": 1,
         "name": "Bread",
@@ -71,8 +69,9 @@ Content-Type: application/json; charset=UTF-8
       },
     ]
   },
-  {
-    "states": [
+
+  "states": {
+    "items": [
       {
         "id": 1,
         "name": "Normal work",
@@ -97,28 +96,26 @@ Content-Type: application/json; charset=UTF-8
       },
     ]
   },
-  {
-    "users": [
-      {
-        "id": 1,
-        "userName": "David Henry",
-        "email": "david.henry@email.com",
-        "role": "Super user"
-      },
-    ]
-  },
-  {
-    "channels": [
-      {
-        "id": 1,
-        "name": "All workers",
-        "type": "email",
-        "isForAllAlerts": false,
-        "emails": ["alex@company.com", "kos@gmail.com"]
-      }
-    ]
-  }
-]
+
+  "users": [
+    {
+      "id": 1,
+      "userName": "David Henry",
+      "email": "david.henry@email.com",
+      "role": "Super user"
+    },
+  ],
+
+  "channels": [
+    {
+      "id": 1,
+      "name": "All workers",
+      "type": "email",
+      "isForAllAlerts": false,
+      "emails": ["alex@company.com", "kos@gmail.com"]
+    }
+  ]
+}
 ```
 
 **Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
