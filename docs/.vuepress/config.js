@@ -3,6 +3,15 @@ module.exports = {
   description: "Описание API сервера веб приложения QiVisor",
   // theme: '@vuepress/theme-default',
   head: [["link", { rel: "icon", href: "images/logo_green.png" }]],
+  locales: {
+    // The key is the path for the locale to be nested under.
+    // As a special case, the default locale can use '/' as its path.
+    '/': {
+      lang: 'ru-UA', // this will be set as the lang attribute on <html>
+      title: 'VuePress',
+      description: 'Vue-powered Static Site Generator'
+    },
+  },
   // plugins: ["@vuepress/pwa"],
   // plugins: {
   //   "@vuepress/pwa": {
