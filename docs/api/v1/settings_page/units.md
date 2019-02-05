@@ -5,15 +5,14 @@
 
 ![settings_page](/images/settings_page/units.png)
 
-<req method="get" path="/settings/units" isArrow>
+<req method="get" path="/units" isArrow>
 
-Получение параметров меню Units. Ответ содержит список параметров всех доступных юнитов.
+Получение параметров Units. Ответ содержит список параметров всех доступных юнитов.
 
 **Пример запроса:**
 
 ```json
-GET {baseURL}/settings/units HTTP/1.1
-Accept: application/json
+GET {baseURL}/units HTTP/1.1
 ```
 
 **Пример ответа (STATUS 200):**
@@ -43,15 +42,15 @@ Content-Type: application/json; charset=UTF-8
 </req>
 
 <!-- ********************************************************************************************************************* -->
-<req method="put" path="/settings/units" isArrow>
+<req method="put" path="/units" isArrow>
 
-Данный запрос выполняет обновление параметров юнитов.
-В теле запроса должны передаются только те юниты, у которых были изменены параметры.
+Данный запрос выполняет обновление параметров всех юнитов.
+В теле запроса должны передаваться параметры юнитов.
 
 **Пример запроса:**
 
 ```json
-PUT {baseURL}/settings/units HTTP/1.1
+PUT {baseURL}/units HTTP/1.1
 Content-Type: application/json
 
 {
@@ -67,6 +66,34 @@ Content-Type: application/json
       "comment": "comment text for Unit 2"
     }
   ]
+}
+```
+
+**Пример ответа (STATUS 200):**
+
+```json
+HTTP/1.1 200 OK
+```
+
+**Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
+
+</req>
+
+<!-- ********************************************************************************************************************* -->
+<req method="put" path="/units/{id}" isArrow>
+
+Данный запрос выполняет обновление параметров одного юнита по заданному id.
+В теле запроса должны передаваться параметры изменяемого юнита.
+
+**Пример запроса:**
+
+```json
+PUT {baseURL}/units/1 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Unit 1",
+  "comment": "comment text for Unit 1"
 }
 ```
 

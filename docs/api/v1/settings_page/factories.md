@@ -5,15 +5,14 @@
 
 ![settings_page](/images/settings_page/factories.png)
 
-<req method="get" path="/settings/factories" isArrow>
+<req method="get" path="/factories" isArrow>
 
-Получение параметров меню Factories. Ответ содержит список параметров всех доступных фабрик
+Получение параметров Factories. Ответ содержит список параметров всех доступных фабрик
 
 **Пример запроса:**
 
 ```json
-GET {baseURL}/settings/factories HTTP/1.1
-Accept: application/json
+GET {baseURL}/factories HTTP/1.1
 ```
 
 **Пример ответа (STATUS 200):**
@@ -43,15 +42,15 @@ Content-Type: application/json; charset=UTF-8
 </req>
 
 <!-- ********************************************************************************************************************* -->
-<req method="put" path="/settings/factories" isArrow>
+<req method="put" path="/factories" isArrow>
 
-Данный запрос выполняет обновление параметров фабрик.
-В теле запроса должны передаются только те фабрики, у которых были изменены параметры.
+Данный запрос выполняет обновление параметров всех фабрик.
+В теле запроса должны передаваться параметры фабрик.
 
 **Пример запроса:**
 
 ```json
-PUT {baseURL}/settings/factories HTTP/1.1
+PUT {baseURL}/factories HTTP/1.1
 Content-Type: application/json
 
 {
@@ -67,6 +66,34 @@ Content-Type: application/json
       "comment": ""
     }
   ]
+}
+```
+
+**Пример ответа (STATUS 200):**
+
+```json
+HTTP/1.1 200 OK
+```
+
+**Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
+
+</req>
+
+<!-- ********************************************************************************************************************* -->
+<req method="put" path="/factories/{id}" isArrow>
+
+Данный запрос выполняет обновление параметров одной фабрики по заданному id.
+В теле запроса должны передаваться параметры изменяемой фабрики.
+
+**Пример запроса:**
+
+```json
+PUT {baseURL}/factories/1 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Factory 1",
+  "comment": ""
 }
 ```
 

@@ -5,15 +5,14 @@
 
 ![settings_page](/images/settings_page/processes.png)
 
-<req method="get" path="/settings/processes" isArrow>
+<req method="get" path="/processes" isArrow>
 
-Получение параметров меню Processes. Ответ содержит список параметров всех доступных процессов
+Получение параметров Processes. Ответ содержит список параметров всех доступных процессов
 
 **Пример запроса:**
 
 ```json
-GET {baseURL}/settings/processes HTTP/1.1
-Accept: application/json
+GET {baseURL}/processes HTTP/1.1
 ```
 
 **Пример ответа (STATUS 200):**
@@ -43,15 +42,15 @@ Content-Type: application/json; charset=UTF-8
 </req>
 
 <!-- ********************************************************************************************************************* -->
-<req method="put" path="/settings/processes" isArrow>
+<req method="put" path="/processes" isArrow>
 
-Данный запрос выполняет обновление параметров процессов.
-В теле запроса должны передаются только те процессы, у которых были изменены параметры.
+Данный запрос выполняет обновление параметров всех процессов.
+В теле запроса должны передаваться параметры процессов.
 
 **Пример запроса:**
 
 ```json
-PUT {baseURL}/settings/processes HTTP/1.1
+PUT {baseURL}/processes HTTP/1.1
 Content-Type: application/json
 
 {
@@ -67,6 +66,34 @@ Content-Type: application/json
       "comment": "comment text for Process 2"
     }
   ]
+}
+```
+
+**Пример ответа (STATUS 200):**
+
+```json
+HTTP/1.1 200 OK
+```
+
+**Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
+
+</req>
+
+<!-- ********************************************************************************************************************* -->
+<req method="put" path="/processes/{id}" isArrow>
+
+Данный запрос выполняет обновление параметров одного процесса по заданному id.
+В теле запроса должны передаваться параметры изменяемого процесса.
+
+**Пример запроса:**
+
+```json
+PUT {baseURL}/processes/1 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Process 1",
+  "comment": "comment text for Process 1"
 }
 ```
 

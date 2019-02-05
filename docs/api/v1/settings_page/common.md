@@ -3,15 +3,14 @@
 ---
 # All Settings
 
-<req method="get" path="/settings" isArrow>
+<req method="get" path="/allsettings" isArrow>
 
 Получение всех параметров всех меню настроек одним запросом. В теле ответа передаётся массив объектов, где каждый объект относится к отдельному пункту меню. Более детальное описание по каждому меню находится в следующих разделах.
 
 **Пример запроса:**
 
 ```json
-GET {baseURL}/settings HTTP/1.1
-Accept: application/json
+GET {baseURL}/allsettings HTTP/1.1
 ```
 
 **Пример ответа (STATUS 200):**
@@ -90,7 +89,7 @@ Content-Type: application/json; charset=UTF-8
         "color": "#DDC65F"
       },
     ],
-    "reasons": [
+    "states": [
       {
         "id": 1,
         "name": "Normal work",
@@ -116,7 +115,7 @@ Content-Type: application/json; charset=UTF-8
   },
   {
     "menuName": "Alerting",
-    "notificationChannels": [
+    "channels": [
       {
         "id": 1,
         "name": "All workers",

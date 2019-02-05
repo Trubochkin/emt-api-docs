@@ -4,22 +4,22 @@ module.exports = {
   // theme: '@vuepress/theme-default',
   head: [["link", { rel: "icon", href: "images/logo_green.png" }]],
   // plugins: ["@vuepress/pwa"],
-  plugins: {
-    "@vuepress/pwa": {
-      serviceWorker: true,
-      updatePopup: {
-        message: "New content is available.",
-        buttonText: "Refresh"
-      }
-    }
-  },
+  // plugins: {
+  //   "@vuepress/pwa": {
+  //     serviceWorker: true,
+  //     updatePopup: {
+  //       message: "New content is available.",
+  //       buttonText: "Refresh"
+  //     }
+  //   }
+  // },
   markdown: {
     lineNumbers: true
   },
   themeConfig: {
     logo: '/images/logo_green.png',
     lastUpdated: "Последнее обновление",
-    displayAllHeaders: true, // Default: false
+    displayAllHeaders: false, // Default: false
     nav: [
       { text: "API Docs", link: "/overview/intro" }
       // {

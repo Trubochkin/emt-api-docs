@@ -9,8 +9,6 @@
 
 ```json
 POST /auth/signin HTTP/1.1
-Host: api.server.com
-Accept: application/json
 Content-Type: application/json
 
 {

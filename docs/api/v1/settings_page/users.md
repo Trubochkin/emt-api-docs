@@ -5,15 +5,14 @@
 
 ![settings_page](/images/settings_page/users.png)
 
-<req method="get" path="/settings/users" isArrow>
+<req method="get" path="/users" isArrow>
 
-Получение параметров меню Users. Ответ содержит параметры всех пользователей.
+Получение параметров Users. Ответ содержит параметры всех пользователей.
 
 **Пример запроса:**
 
 ```json
-GET {baseURL}/settings/users HTTP/1.1
-Accept: application/json
+GET {baseURL}/users HTTP/1.1
 ```
 
 **Пример ответа (STATUS 200):**
@@ -25,13 +24,13 @@ Content-Type: application/json; charset=UTF-8
 {
   "users": [
     {
-      "userId": 1,
+      "id": 1,
       "userName": "David Henry",
       "email": "david.henry@email.com",
       "role": "Super user"
     },
     {
-      "userId": 2,
+      "id": 2,
       "userName": "Lewis Young",
       "email": "lewis.young@email.com",
       "role": "Advanced user"
@@ -47,7 +46,7 @@ Content-Type: application/json; charset=UTF-8
 <!-- ********************************************************************************************** 
 
 -->
-<req method="post" path="/settings/users/new" isArrow>
+<req method="post" path="/users/new" isArrow>
 
 Данный запрос выполняет создание одного юзера.
 В теле запроса должен передаваться объект с параметрами.
@@ -55,20 +54,30 @@ Content-Type: application/json; charset=UTF-8
 **Пример запроса:**
 
 ```json
-POST {baseURL}/settings/users/new HTTP/1.1
+POST {baseURL}/users/new HTTP/1.1
 Content-Type: application/json
 
 {
-  "userName": "Lewis Young",
-  "email": "lewis.young@email.com",
-  "role": "Advanced user"
+  "userName": "Stive Colins",
+  "email": "stive.solins@email.com",
+  "role": "User"
 }
 ```
+
+Тело ответа содержит дублирующий объект с добавлением поля `"id"`, по которому клиентское приложение может обращаться для изменения созданного ресурса.
 
 **Пример ответа (STATUS 201):**
 
 ```json
 HTTP/1.1 201 Created
+Content-Type: application/json; charset=UTF-8
+
+{
+  "id": 14,
+  "userName": "Stive Colins",
+  "email": "stive.solins@email.com",
+  "role": "User"
+}
 ```
 
 **Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
@@ -78,7 +87,7 @@ HTTP/1.1 201 Created
 <!-- **********************************************************************************************
 
 -->
-<req method="put" path="/settings/users/{userId}" isArrow>
+<req method="put" path="/users/{id}" isArrow>
 
 Данный запрос выполняет обновление параметров одного юзера по заданному id.
 В теле запроса должен передаваться объект с параметрами.
@@ -86,7 +95,7 @@ HTTP/1.1 201 Created
 **Пример запроса:**
 
 ```json
-PUT {baseURL}/settings/users/1 HTTP/1.1
+PUT {baseURL}/users/1 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -109,14 +118,14 @@ HTTP/1.1 200 OK
 <!-- ********************************************************************************************** 
 
 -->
-<req method="delete" path="/settings/users/{userId}" isArrow>
+<req method="delete" path="/users/{id}" isArrow>
 
 Данный запрос выполняет удаление одного юзера по заданному id.
 
 **Пример запроса:**
 
 ```json
-DELETE {baseURL}/settings/users/1 HTTP/1.1
+DELETE {baseURL}/users/1 HTTP/1.1
 ```
 
 **Пример ответа (STATUS 204):**

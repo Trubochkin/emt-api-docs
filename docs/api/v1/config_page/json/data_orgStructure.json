@@ -1,0 +1,25 @@
+{
+  "factories": [
+    {
+      "id": 1,
+      "name": "Bakery",
+      "comment": "comment text for Factory"
+    }
+  ],
+  "processes": [
+    {
+      "id": 1,
+      "name": "Bread line",
+      "comment": "comment text for Process",
+      "parentId": 1
+    }
+  ],
+  "units": [
+    {
+      "id": 1,
+      "name": "Oven 1",
+      "comment": "comment text for Unit",
+      "parentId": 1
+    }
+  ]
+}

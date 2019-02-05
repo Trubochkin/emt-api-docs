@@ -5,15 +5,14 @@
 
 ![settings_page](/images/settings_page/alerting.png)
 
-<req method="get" path="/settings/alerting" isArrow>
+<req method="get" path="/alertingchannels" isArrow>
 
-Получение параметров меню Alerting. Ответ содержит список параметров всех каналов оповещений.
+Получение параметров Alerting. Ответ содержит список параметров всех каналов оповещений.
 
 **Пример запроса:**
 
 ```json
-GET {baseURL}/settings/alerting HTTP/1.1
-Accept: application/json
+GET {baseURL}/alertingchannels HTTP/1.1
 ```
 
 **Пример ответа (STATUS 200):**
@@ -42,7 +41,7 @@ Content-Type: application/json; charset=UTF-8
 <!-- ********************************************************************************************** 
 
 -->
-<req method="post" path="/settings/alerting/channels/new" isArrow>
+<req method="post" path="/alertingchannels/new" isArrow>
 
 Данный запрос выполняет создание одного канала оповещений.
 В теле запроса должен передаваться объект с параметрами.
@@ -50,7 +49,7 @@ Content-Type: application/json; charset=UTF-8
 **Пример запроса:**
 
 ```json
-POST {baseURL}/settings/alerting/channels/new HTTP/1.1
+POST {baseURL}/alertingchannels/new HTTP/1.1
 Content-Type: application/json
 
 {
@@ -61,10 +60,21 @@ Content-Type: application/json
 }
 ```
 
+Тело ответа содержит дублирующий объект с добавлением поля `"id"`, по которому клиентское приложение может обращаться для изменения созданного ресурса.
+
 **Пример ответа (STATUS 201):**
 
 ```json
 HTTP/1.1 201 Created
+Content-Type: application/json; charset=UTF-8
+
+{
+  "id": 2,
+  "name": "Other channel",
+  "type": "email",
+  "isForAllAlerts": false,
+  "emails": ["user1@company.com", "user2@company.com"]
+}
 ```
 
 **Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
@@ -74,7 +84,7 @@ HTTP/1.1 201 Created
 <!-- **********************************************************************************************
 
 -->
-<req method="put" path="/settings/alerting/channels/{id}" isArrow>
+<req method="put" path="/alertingchannels/{id}" isArrow>
 
 Данный запрос выполняет обновление параметров одного канала уведомлений по заданному id.
 В теле запроса должен передаваться объект с параметрами.
@@ -82,7 +92,7 @@ HTTP/1.1 201 Created
 **Пример запроса:**
 
 ```json
-PUT {baseURL}/alerting/channels/1 HTTP/1.1
+PUT {baseURL}/alertingchannels/1 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -106,14 +116,14 @@ HTTP/1.1 200 OK
 <!-- ********************************************************************************************** 
 
 -->
-<req method="delete" path="/settings/alerting/channels/{id}" isArrow>
+<req method="delete" path="/alertingchannels/{id}" isArrow>
 
 Данный запрос выполняет удаление одного канала оповещений по заданному id.
 
 **Пример запроса:**
 
 ```json
-DELETE {baseURL}/settings/alerting/channels/1 HTTP/1.1
+DELETE {baseURL}/alertingchannels/1 HTTP/1.1
 ```
 
 **Пример ответа (STATUS 204):**
@@ -129,7 +139,7 @@ HTTP/1.1 204 No Content
 <!-- ********************************************************************************************** 
 
 -->
-<req method="post" path="/settings/alerting/channeltest" isArrow>
+<req method="post" path="/alertingchannels/channeltest" isArrow>
 
 Запрашивает сервер выполнить тестовое оповещение согласно заданным параметрам. При этом сервер не создаёт канал оповещения в БД.
 В теле запроса должен передаваться объект с параметрами.
@@ -137,7 +147,7 @@ HTTP/1.1 204 No Content
 **Пример запроса:**
 
 ```json
-POST {baseURL}/settings/alerting/channeltest HTTP/1.1
+POST {baseURL}/alertingchannels/channeltest HTTP/1.1
 Content-Type: application/json
 
 {
