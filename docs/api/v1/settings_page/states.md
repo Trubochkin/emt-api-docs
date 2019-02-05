@@ -7,7 +7,7 @@
 
 <req method="get" path="/states" isArrow>
 
-Получение параметров States. Ответ содержит список параметров всех доступных состояний и категорий. В теле ответа, в объекте `"states"`, поле `"parentCategoryId"` говорит о том, к какой категории привязано состояние.
+Получение параметров States. Ответ содержит список параметров всех доступных состояний и категорий. В теле ответа, в объекте `"states"`, поле `"parentCategoryId"` говорит о том, к какой категории привязано состояние. Если состояние не привязано к категории, то `"parentCategoryId": null`
 
 **Пример запроса:**
 
@@ -22,30 +22,47 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
 
 {
-  "categories": [
-    {
-      "id": 1,
-      "name": "Work",
-      "color": "#00C94E"
-    },
-    {
-      "id": 2,
-      "name": "Planed downtime",
-      "color": "#DDC65F"
-    },
-  ],
-  "states": [
-    {
-      "id": 1,
-      "name": "Normal work",
-      "parentCategoryId": 1
-    },
-    {
-      "id": 2,
-      "name": "Cleaning",
-      "parentCategoryId": 2
-    },
-  ]
+  "states": {
+    "items": [
+      {
+        "id": 1,
+        "name": "Normal work",
+        "parentCategoryId": 1
+      },
+      {
+        "id": 2,
+        "name": "Cleaning",
+        "parentCategoryId": 2
+      },
+      {
+        "id": 3,
+        "name": "Setup",
+        "parentCategoryId": null
+      },
+      {
+        "id": 3,
+        "name": "Poor electrical connections",
+        "parentCategoryId": 3
+      }
+    ],
+    "categories": [
+      {
+        "id": 1,
+        "name": "Work",
+        "color": "#00C94E"
+      },
+      {
+        "id": 2,
+        "name": "Planed downtime",
+        "color": "#DDC65F"
+      },
+      {
+        "id": 3,
+        "name": "Unplanned downtime",
+        "color": "#FF4F4F"
+      }
+    ]
+  }
 }
 ```
 
@@ -54,7 +71,7 @@ Content-Type: application/json; charset=UTF-8
 </req>
 
 <!-- ********************************************************************************************** -->
-<req method="post" path="/states/new" isArrow>
+<req method="post" path="/states/items/new" isArrow>
 
 Данный запрос выполняет создание одного состояния.
 В теле запроса должен передаваться объект с параметрами. В поле `"parentCategoryId"` задаётся `id` выбранной категории состояния. Если категория не была выбрана, то поле `"parentCategoryId"` должно быть равно `null`.
@@ -62,7 +79,7 @@ Content-Type: application/json; charset=UTF-8
 **Пример запроса:**
 
 ```json
-POST {baseURL}/states/new HTTP/1.1
+POST {baseURL}/states/items/new HTTP/1.1
 Content-Type: application/json
 
 {
@@ -91,7 +108,7 @@ Content-Type: application/json; charset=UTF-8
 </req>
 
 <!-- ********************************************************************************************** -->
-<req method="put" path="/states/{id}" isArrow>
+<req method="put" path="/states/items/{id}" isArrow>
 
 Данный запрос выполняет обновление параметров одного состояния по заданному id.
 В теле запроса должен передаваться объект с параметрами.
@@ -99,7 +116,7 @@ Content-Type: application/json; charset=UTF-8
 **Пример запроса:**
 
 ```json
-PUT {baseURL}/states/1 HTTP/1.1
+PUT {baseURL}/states/items/1 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -119,14 +136,14 @@ HTTP/1.1 200 OK
 </req>
 
 <!-- ********************************************************************************************** -->
-<req method="delete" path="/states/{id}" isArrow>
+<req method="delete" path="/states/items/{id}" isArrow>
 
 Данный запрос выполняет удаление одного состояния по заданному id.
 
 **Пример запроса:**
 
 ```json
-DELETE {baseURL}/states/1 HTTP/1.1
+DELETE {baseURL}/states/items/1 HTTP/1.1
 ```
 
 **Пример ответа (STATUS 204):**

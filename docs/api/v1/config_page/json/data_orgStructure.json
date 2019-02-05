@@ -1,25 +1,61 @@
 {
-  "factories": [
+  "factoriesNodes": [
     {
-      "id": 1,
+      "nodeId": 1,
       "name": "Bakery",
-      "comment": "comment text for Factory"
+      "comment": "comment text for Factory1"
     }
   ],
-  "processes": [
+
+
+  "processesNodes": [
     {
-      "id": 1,
+      "nodeId": 10,
       "name": "Bread line",
-      "comment": "comment text for Process",
-      "parentId": 1
+      "comment": "comment text for Process1",
+      "parentNodeId": 1
     }
   ],
-  "units": [
+
+
+  "unitsNodes": [
+    {
+      "nodeId": 20,
+      "name": "Oven 1",
+      "comment": "comment text for Unit1",
+      "parentNodeId": 10
+    },
+    {
+      "nodeId": 21,
+      "name": "Oven 2",
+      "comment": "comment text for Unit2",
+      "parentNodeId": 10
+    }
+  ],
+
+
+  "sensors": [
     {
       "id": 1,
-      "name": "Oven 1",
-      "comment": "comment text for Unit",
-      "parentId": 1
+      "parentNodeId": 20,
+      "orderNumber": 0,
+      "name": "Humidity",
+      "um": "%",
+      "isActive": true
     }
-  ]
+  ],
+
+
+  "dashboardProps": {
+    "id": 1,
+    "name": "Dashboard sensors",
+    "miniGraphStates": false,
+    "miniGraphSensors": false,
+    "showDescriptions": true,
+    "showMinimap": true,
+    "scale": "linear",
+    "treeProps": {
+
+    }
+  }
 }

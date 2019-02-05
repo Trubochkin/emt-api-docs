@@ -21,7 +21,6 @@ Content-Type: application/json; charset=UTF-8
 
 [
   {
-    "menuName": "Factories",
     "factories": [
       {
         "id": 1,
@@ -31,7 +30,6 @@ Content-Type: application/json; charset=UTF-8
     ]
   },
   {
-    "menuName": "Processes",
     "processes": [
       {
         "id": 1,
@@ -41,7 +39,6 @@ Content-Type: application/json; charset=UTF-8
     ]
   },
   {
-    "menuName": "Units",
     "units": [
       {
         "id": 1,
@@ -51,17 +48,6 @@ Content-Type: application/json; charset=UTF-8
     ]
   },
   {
-    "menuName": "Products",
-    "categories": [
-      {
-        "id": 1,
-        "name": "Bake"
-      },
-      {
-        "id": 2,
-        "name": "Diary"
-      },
-    ],
     "products": [
       {
         "id": 1,
@@ -73,22 +59,19 @@ Content-Type: application/json; charset=UTF-8
         "name": "Milk",
         "parentCategoryId": 2
       },
-    ]
-  },
-  {
-    "menuName": "States",
+    ],
     "categories": [
       {
         "id": 1,
-        "name": "Work",
-        "color": "#00C94E"
+        "name": "Bake"
       },
       {
         "id": 2,
-        "name": "Planed downtime",
-        "color": "#DDC65F"
+        "name": "Diary"
       },
-    ],
+    ]
+  },
+  {
     "states": [
       {
         "id": 1,
@@ -100,10 +83,21 @@ Content-Type: application/json; charset=UTF-8
         "name": "Cleaning",
         "parentCategoryId": 2
       },
+    ],
+    "categories": [
+      {
+        "id": 1,
+        "name": "Work",
+        "color": "#00C94E"
+      },
+      {
+        "id": 2,
+        "name": "Planed downtime",
+        "color": "#DDC65F"
+      },
     ]
   },
   {
-    "menuName": "Users",
     "users": [
       {
         "id": 1,
@@ -114,7 +108,6 @@ Content-Type: application/json; charset=UTF-8
     ]
   },
   {
-    "menuName": "Alerting",
     "channels": [
       {
         "id": 1,

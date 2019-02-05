@@ -2,12 +2,6 @@
   <div class="wrap">
     <div class="header" :data-type="method.toLowerCase()" @click="toCollapse">
       <span class="row-path">{{textWithSpace}}</span>
-      <!-- <div 
-        v-if="isArrow" 
-        class="btn-collaps" 
-        :class="{up: !isCollapse, down: isCollapse}" 
-        @click="toCollapse">
-      </div> -->
     </div>
     <div v-if="!isCollapse" class="md">
       <slot/>
@@ -25,13 +19,8 @@ export default {
   },
   computed: {
     textWithSpace: function() {
-      // console.log("html: ", this);
       return this.path ? ` ${this.path}` : "";
-    },
-    // mdBoxHeight: function() {
-    //   return this.$refs.mdBox.clientHeight + 'px';
-    //   console.log("mdBoxHeight: ", mdBoxHeight)
-    // }
+    }
   },
   methods: {
     toCollapse: function(e) {
@@ -48,7 +37,6 @@ export default {
 
 <style scoped>
 .wrap {
-  /* display: grid; */
   display: flex;
   flex-flow: column;
   padding: 5px 0px;
@@ -57,38 +45,11 @@ export default {
   padding: 5px;
 }
 
-.md {
-  /* position: relative; */
-  /* padding-top: 16px; */
-}
-
 .row-path {
   height: auto;
   align-self: center;
   flex-grow: 1;
   white-space: pre;
-}
-
-.btn-collaps {
-  height: auto;
-  width: 40px;
-  border-left: 1px solid #cecece;
-  background-image: url('/images/arrow.png');
-  background-repeat: no-repeat;
-  background-position: center; 
-  background-size: 25px 25px;
-  cursor: pointer;
-  text-align: center;
-  transition-duration: 0.4s;
-  transition-property: transform;
-}
-
-.up {
-  transform: scaleY(-1);
-}
-
-.down {
-  transform: scaleY(1);
 }
 
 .header {
@@ -129,8 +90,6 @@ export default {
   width: 60px;
   height: 25px;
   content: attr(data-type);
-  /* display: inline-block; */
-  /* margin: 5px 0px; */
   color: #ffffff;
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;

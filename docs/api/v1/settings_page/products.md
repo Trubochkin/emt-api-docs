@@ -7,7 +7,7 @@
 
 <req method="get" path="/products" isArrow>
 
-Получение параметров Products. Ответ содержит список параметров всех доступных продуктов и категорий. В теле ответа, в параметрах продуктов, поле `"parentCategoryId"` говорит о том, к какой категории привязан продукт.
+Получение параметров Products. Ответ содержит список параметров всех доступных продуктов и категорий. В теле ответа, в параметрах продуктов, поле `"parentCategoryId"` говорит о том, к какой категории привязан продукт. Если продукт не привязан к категории, то `"parentCategoryId": null`
 
 **Пример запроса:**
 
@@ -22,28 +22,44 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
 
 {
-  "categories": [
-    {
-      "id": 1,
-      "name": "Bake"
-    },
-    {
-      "id": 2,
-      "name": "Diary"
-    },
-  ],
-  "products": [
-    {
-      "id": 1,
-      "name": "Bread",
-      "parentCategoryId": 1
-    },
-    {
-      "id": 3,
-      "name": "Milk",
-      "parentCategoryId": 2
-    },
-  ]
+  "products": {
+    "items": [
+      {
+        "id": 1,
+        "name": "Bread",
+        "parentCategoryId": 1
+      },
+      {
+        "id": 2,
+        "name": "Bun",
+        "parentCategoryId": 1
+      },
+      {
+        "id": 3,
+        "name": "Milk",
+        "parentCategoryId": 2
+      },
+      {
+        "id": 4,
+        "name": "Baguette",
+        "parentCategoryId": null
+      }
+    ],
+    "categories": [
+      {
+        "id": 1,
+        "name": "Bake"
+      },
+      {
+        "id": 2,
+        "name": "Diary"
+      },
+      {
+        "id": 3,
+        "name": "Beer"
+      }
+    ]
+  }
 }
 ```
 
@@ -52,7 +68,7 @@ Content-Type: application/json; charset=UTF-8
 </req>
 
 <!-- ********************************************************************************************** -->
-<req method="post" path="/products/new" isArrow>
+<req method="post" path="/products/items/new" isArrow>
 
 Данный запрос выполняет создание одного продукта.
 В теле запроса должен передаваться объект с параметрами. В поле `"parentCategoryId"` задаётся `id` выбранной категории. Если категория не была выбрана, то поле `"parentCategoryId"` должно быть равно `null`.
@@ -60,7 +76,7 @@ Content-Type: application/json; charset=UTF-8
 **Пример запроса:**
 
 ```json
-POST {baseURL}/products/new HTTP/1.1
+POST {baseURL}/products/items/new HTTP/1.1
 Content-Type: application/json
 
 {
@@ -89,7 +105,7 @@ Content-Type: application/json; charset=UTF-8
 </req>
 
 <!-- ********************************************************************************************** -->
-<req method="put" path="/products/{id}" isArrow>
+<req method="put" path="/products/items/{id}" isArrow>
 
 Данный запрос выполняет обновление параметров одного продукта по заданному id.
 В теле запроса должен передаваться объект с параметрами.
@@ -97,7 +113,7 @@ Content-Type: application/json; charset=UTF-8
 **Пример запроса:**
 
 ```json
-PUT {baseURL}/products/1 HTTP/1.1
+PUT {baseURL}/products/items/1 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -117,14 +133,14 @@ HTTP/1.1 200 OK
 </req>
 
 <!-- ********************************************************************************************** -->
-<req method="delete" path="/products/{id}" isArrow>
+<req method="delete" path="/products/items/{id}" isArrow>
 
 Данный запрос выполняет удаление одного продукта по заданному id.
 
 **Пример запроса:**
 
 ```json
-DELETE {baseURL}/products/1 HTTP/1.1
+DELETE {baseURL}/products/items/1 HTTP/1.1
 ```
 
 **Пример ответа (STATUS 204):**

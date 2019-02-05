@@ -1,39 +1,40 @@
 {
-  "menuName": "Products",
-  "categories": [
-    {
-      "id": 1,
-      "name": "Bake"
-    },
-    {
-      "id": 2,
-      "name": "Diary"
-    },
-    {
-      "id": 3,
-      "name": "Beer"
-    }
-  ],
-  "products": [
-    {
-      "id": 1,
-      "name": "Bread",
-      "parentCategoryId": 1
-    },
-    {
-      "id": 2,
-      "name": "Bun",
-      "parentCategoryId": 1
-    },
-    {
-      "id": 3,
-      "name": "Milk",
-      "parentCategoryId": 2
-    },
-    {
-      "id": 4,
-      "name": "Baguette",
-      "parentCategoryId": 1
-    }
-  ]
+  "products": {
+    "items": [
+      {
+        "id": 1,
+        "name": "Bread",
+        "parentCategoryId": 1
+      },
+      {
+        "id": 2,
+        "name": "Bun",
+        "parentCategoryId": 1
+      },
+      {
+        "id": 3,
+        "name": "Milk",
+        "parentCategoryId": 2
+      },
+      {
+        "id": 4,
+        "name": "Baguette",
+        "parentCategoryId": null
+      }
+    ],
+    "categories": [
+      {
+        "id": 1,
+        "name": "Bake"
+      },
+      {
+        "id": 2,
+        "name": "Diary"
+      },
+      {
+        "id": 3,
+        "name": "Beer"
+      }
+    ]
+  }
 }
