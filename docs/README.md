@@ -2,7 +2,7 @@
 home: true
 heroImage: /images/logo_green.png
 heroText: API-Docs
-tagline: Описание API веб приложения QiVisor
+tagline: RESTful API documentation
 actionText: Read →
 actionLink: /v1/overview/intro
 pageClass: home-page
