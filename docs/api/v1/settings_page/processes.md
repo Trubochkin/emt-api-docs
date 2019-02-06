@@ -39,6 +39,14 @@ Content-Type: application/json; charset=UTF-8
 
 **Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
 
+```json
+1006: "Error access to database"
+2002: "Access token expired"
+2004: "No access token"
+3001: "Access to this resource is denied"
+6001: "Too many requests. Try again later"
+```
+
 </req>
 
 <!-- ********************************************************************************************************************* -->
@@ -77,6 +85,15 @@ HTTP/1.1 200 OK
 
 **Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
 
+```json
+1001: "Incorrect data"
+1006: "Error access to database"
+2002: "Access token expired"
+2004: "No access token"
+3001: "Access to this resource is denied"
+6001: "Too many requests. Try again later"
+```
+
 </req>
 
 <!-- ********************************************************************************************************************* -->
@@ -104,5 +121,15 @@ HTTP/1.1 200 OK
 ```
 
 **Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
+
+```json
+1001: "Incorrect data"
+1005: "Resource with this id is not exists"
+1006: "Error access to database"
+2002: "Access token expired"
+2004: "No access token"
+3001: "Access to this resource is denied"
+6001: "Too many requests. Try again later"
+```
 
 </req>

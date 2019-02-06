@@ -1,0 +1,71 @@
+{
+  "dashboardProps": {
+    "id": 1,
+    "name": "Dashboard sensors",
+    "miniGraphStates": false,
+    "miniGraphSensors": false,
+    "showDescriptions": true,
+    "showMinimap": true,
+    "defaultScale": "linear",
+    "time": {
+      "from": "2019-02-03T22:51:57.312Z",
+      "to": "now"
+    },
+    "treeStructure": {
+      "factoriesNodes": [
+        {
+          "nodeId": 1,
+          "name": "Bakery",
+          "comment": "comment text for Factory1",
+          "collapsable": false,
+          "children": [
+            {
+              "nodeId": 10,
+              "name": "Bread line",
+              "comment": "comment text for Process1",
+              "parentNodeId": 1,
+              "collapsable": false,
+              "children": [
+                {
+                  "nodeId": 20,
+                  "name": "Oven 1",
+                  "comment": "comment text for Unit1",
+                  "parentNodeId": 10,
+                  "collapsable": false,
+                  "measuringItems": [
+                    {
+                      "id": 1,
+                      "parentNodeId": 20,
+                      "type": "sensor",
+                      "name": "Humidity",
+                      "um": "%",
+                      "isActive": true,
+                      "graphPreferences": {
+                        "minValue": null,
+                        "maxValue": null,
+                        "scale": "log(base 10)"
+                      }
+                    },
+                    {
+                      "id": 16,
+                      "parentNodeId": 20,
+                      "type": "state",
+                      "name": "Humidity",
+                      "um": "%",
+                      "isActive": true,
+                      "graphPreferences": {
+                        "minValue": null,
+                        "maxValue": null,
+                        "scale": "log(base 10)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

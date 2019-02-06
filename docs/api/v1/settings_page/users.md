@@ -41,6 +41,14 @@ Content-Type: application/json; charset=UTF-8
 
 **Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
 
+```json
+1006: "Error access to database"
+2002: "Access token expired"
+2004: "No access token"
+3001: "Access to this resource is denied"
+6001: "Too many requests. Try again later"
+```
+
 </req>
 
 <!-- ********************************************************************************************** 
@@ -50,6 +58,7 @@ Content-Type: application/json; charset=UTF-8
 
 Данный запрос выполняет создание одного юзера.
 В теле запроса должен передаваться объект с параметрами.
+Поле `"id"` должно формироваться на клиентской стороне. Для этого нужно из существующего списка пользователей взять `"id"` с самым высоким номером и, прибавив к нему единицу, вставить в передаваемый объект.
 
 **Пример запроса:**
 
@@ -58,29 +67,32 @@ POST {baseURL}/users/new HTTP/1.1
 Content-Type: application/json
 
 {
+  "id": 3,
   "userName": "Stive Colins",
   "email": "stive.solins@email.com",
   "role": "User"
 }
 ```
-
-Тело ответа содержит дублирующий объект с добавлением поля `"id"`, по которому клиентское приложение может обращаться для изменения созданного ресурса.
 
 **Пример ответа (STATUS 201):**
 
 ```json
 HTTP/1.1 201 Created
-Content-Type: application/json; charset=UTF-8
-
-{
-  "id": 14,
-  "userName": "Stive Colins",
-  "email": "stive.solins@email.com",
-  "role": "User"
-}
 ```
 
 **Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
+
+```json
+1001: "Incorrect data"
+1002: "Invalid email format"
+1003: "User with this email already exists"
+1004: "Resource with this id already exists"
+1006: "Error access to database"
+2002: "Access token expired"
+2004: "No access token"
+3001: "Access to this resource is denied"
+6001: "Too many requests. Try again later"
+```
 
 </req>
 
@@ -113,6 +125,18 @@ HTTP/1.1 200 OK
 
 **Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
 
+```json
+1001: "Incorrect data"
+1002: "Invalid email format"
+1003: "User with this email already exists"
+1005: "Resource with this id is not exists"
+1006: "Error access to database"
+2002: "Access token expired"
+2004: "No access token"
+3001: "Access to this resource is denied"
+6001: "Too many requests. Try again later"
+```
+
 </req>
 
 <!-- ********************************************************************************************** 
@@ -135,5 +159,14 @@ HTTP/1.1 204 No Content
 ```
 
 **Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
+
+```json
+1005: "Resource with this id is not exists"
+1006: "Error access to database"
+2002: "Access token expired"
+2004: "No access token"
+3001: "Access to this resource is denied"
+6001: "Too many requests. Try again later"
+```
 
 </req>

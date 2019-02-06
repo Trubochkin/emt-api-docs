@@ -120,4 +120,12 @@ Content-Type: application/json; charset=UTF-8
 
 **Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
 
+```json
+1006: "Error access to database"
+2002: "Access token expired"
+2004: "No access token"
+3001: "Access to this resource is denied"
+6001: "Too many requests. Try again later"
+```
+
 </req>

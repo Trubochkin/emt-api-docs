@@ -36,6 +36,14 @@ Content-Type: application/json; charset=UTF-8
 
 **Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
 
+```json
+1006: "Error access to database"
+2002: "Access token expired"
+2004: "No access token"
+3001: "Access to this resource is denied"
+6001: "Too many requests. Try again later"
+```
+
 </req>
 
 <!-- ********************************************************************************************** 
@@ -45,6 +53,7 @@ Content-Type: application/json; charset=UTF-8
 
 Данный запрос выполняет создание одного канала оповещений.
 В теле запроса должен передаваться объект с параметрами.
+Поле `"id"` должно формироваться на клиентской стороне. Для этого нужно из существующего списка каналов взять `"id"` с самым высоким номером и, прибавив к нему единицу, вставить в передаваемый объект. Если список пустой, то в поле `"id"` записывается `1`.
 
 **Пример запроса:**
 
@@ -53,6 +62,7 @@ POST {baseURL}/alertingchannels/new HTTP/1.1
 Content-Type: application/json
 
 {
+  "id": 2,
   "name": "All workers",
   "type": "email",
   "isForAllAlerts": false,
@@ -66,18 +76,20 @@ Content-Type: application/json
 
 ```json
 HTTP/1.1 201 Created
-Content-Type: application/json; charset=UTF-8
-
-{
-  "id": 2,
-  "name": "Other channel",
-  "type": "email",
-  "isForAllAlerts": false,
-  "emails": ["user1@company.com", "user2@company.com"]
-}
 ```
 
 **Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
+
+```json
+1001: "Incorrect data"
+1002: "Invalid email format"
+1004: "Resource with this id already exists"
+1006: "Error access to database"
+2002: "Access token expired"
+2004: "No access token"
+3001: "Access to this resource is denied"
+6001: "Too many requests. Try again later"
+```
 
 </req>
 
@@ -111,6 +123,17 @@ HTTP/1.1 200 OK
 
 **Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
 
+```json
+1001: "Incorrect data"
+1002: "Invalid email format"
+1005: "Resource with this id is not exists"
+1006: "Error access to database"
+2002: "Access token expired"
+2004: "No access token"
+3001: "Access to this resource is denied"
+6001: "Too many requests. Try again later"
+```
+
 </req>
 
 <!-- ********************************************************************************************** 
@@ -133,6 +156,15 @@ HTTP/1.1 204 No Content
 ```
 
 **Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
+
+```json
+1005: "Resource with this id is not exists"
+1006: "Error access to database"
+2002: "Access token expired"
+2004: "No access token"
+3001: "Access to this resource is denied"
+6001: "Too many requests. Try again later"
+```
 
 </req>
 
@@ -165,5 +197,14 @@ HTTP/1.1 200 OK
 ```
 
 **Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
+
+```json
+1001: "Incorrect data"
+1002: "Invalid email format"
+2002: "Access token expired"
+2004: "No access token"
+3001: "Access to this resource is denied"
+6001: "Too many requests. Try again later"
+```
 
 </req>
