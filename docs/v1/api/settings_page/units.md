@@ -37,7 +37,7 @@ Content-Type: application/json; charset=UTF-8
 }
 ```
 
-**Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
+**Возможные ответы ошибок (см. [коды ошибок](/v1/api/errors.html)):**
 
 ```json
 1006: "Error access to database"
@@ -83,7 +83,7 @@ Content-Type: application/json
 HTTP/1.1 200 OK
 ```
 
-**Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
+**Возможные ответы ошибок (см. [коды ошибок](/v1/api/errors.html)):**
 
 ```json
 1001: "Incorrect data"
@@ -120,7 +120,7 @@ Content-Type: application/json
 HTTP/1.1 200 OK
 ```
 
-**Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
+**Возможные ответы ошибок (см. [коды ошибок](/v1/api/errors.html)):**
 
 ```json
 1001: "Incorrect data"

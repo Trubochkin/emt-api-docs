@@ -4,7 +4,7 @@ heroImage: /images/logo_green.png
 heroText: API-Docs
 tagline: Описание API веб приложения QiVisor
 actionText: Read →
-actionLink: /overview/intro
+actionLink: /v1/overview/intro
 pageClass: home-page
 ---
 

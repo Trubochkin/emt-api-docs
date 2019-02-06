@@ -52,8 +52,8 @@
 В данной документации все адреса запросов к API записаны относительно базовому URL, где базовый URL адрес не показан.
 Например, следующий относительный адрес:
 
-<req method="get" path="/settings/users"/>
+<req method="get" path="/users"/>
 
 подразумевает полный:
 
-<req method="get" path="https://api.server.com/v1/settings/users"/>
+<req method="get" path="https://api.server.com/v1/users"/>

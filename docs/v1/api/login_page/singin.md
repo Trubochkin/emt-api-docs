@@ -32,7 +32,7 @@ Content-Type: application/json; charset=UTF-8
 }
 ```
 
-**Возможные ответы ошибок (см. [коды ошибок](/api/v1/errors.html)):**
+**Возможные ответы ошибок (см. [коды ошибок](/v1/api/errors.html)):**
 
 ```json
 2001: "Invalid login or password"

@@ -1,7 +1,6 @@
 module.exports = {
   title: "API-Docs",
   description: "Описание API сервера веб приложения QiVisor",
-  // theme: '@vuepress/theme-default',
   head: [["link", { rel: "icon", href: "images/logo_green.png" }]],
   locales: {
     // The key is the path for the locale to be nested under.
@@ -12,16 +11,6 @@ module.exports = {
       description: 'Vue-powered Static Site Generator'
     },
   },
-  // plugins: ["@vuepress/pwa"],
-  // plugins: {
-  //   "@vuepress/pwa": {
-  //     serviceWorker: true,
-  //     updatePopup: {
-  //       message: "New content is available.",
-  //       buttonText: "Refresh"
-  //     }
-  //   }
-  // },
   markdown: {
     lineNumbers: true
   },
@@ -30,46 +19,46 @@ module.exports = {
     lastUpdated: "Последнее обновление",
     displayAllHeaders: false, // Default: false
     nav: [
-      { text: "API Docs", link: "/overview/intro" }
-      // {
-      //     text: 'Version',
-      //     items: [
-      //       { text: 'v1', link: '/v1/' },
-      //     ]
-      // }
+      { text: "API Docs", link: "/v1/overview/intro" },
+      {
+          text: 'Version',
+          items: [
+            { text: 'v1', link: '/v1/overview/intro' },
+          ]
+      }
     ],
     sidebar: [
       {
         title: "Введение",
         collapsable: true,
         children: [
-          "/overview/intro",
-          "/overview/architecture",
-          "/api/v1/errors"
+          "/v1/overview/intro",
+          "/v1/overview/architecture",
+          "/v1/api/errors"
         ]
       },
       {
         title: "Страница входа",
         collapsable: true,
         children: [
-          "/api/v1/login_page/singin",
-          "/api/v1/login_page/restore",
-          "/api/v1/login_page/singup",
+          "/v1/api/login_page/singin",
+          "/v1/api/login_page/restore",
+          "/v1/api/login_page/singup",
         ]
       },
       {
         title: "Страница настроек",
         collapsable: true,
         children: [
-            '/api/v1/settings_page/common',
-            '/api/v1/settings_page/factories',
-            '/api/v1/settings_page/processes',
-            '/api/v1/settings_page/units',
-            '/api/v1/settings_page/products',
-            '/api/v1/settings_page/states',
-            '/api/v1/settings_page/users',
-            '/api/v1/settings_page/alerting',
-            '/api/v1/settings_page/password',
+            '/v1/api/settings_page/common',
+            '/v1/api/settings_page/factories',
+            '/v1/api/settings_page/processes',
+            '/v1/api/settings_page/units',
+            '/v1/api/settings_page/products',
+            '/v1/api/settings_page/states',
+            '/v1/api/settings_page/users',
+            '/v1/api/settings_page/alerting',
+            '/v1/api/settings_page/password',
           ]
       },
       {
