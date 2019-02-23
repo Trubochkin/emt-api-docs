@@ -54,7 +54,7 @@ Content-Type: application/json; charset=UTF-8
 <!-- ********************************************************************************************** 
 
 -->
-<req method="post" path="/users/new" isArrow>
+<req method="post" path="/users" isArrow>
 
 Данный запрос выполняет создание одного юзера.
 В теле запроса должен передаваться объект с параметрами.
@@ -63,7 +63,7 @@ Content-Type: application/json; charset=UTF-8
 **Пример запроса:**
 
 ```json
-POST {baseURL}/users/new HTTP/1.1
+POST {baseURL}/users HTTP/1.1
 Content-Type: application/json
 
 {

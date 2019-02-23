@@ -79,7 +79,7 @@ Content-Type: application/json; charset=UTF-8
 </req>
 
 <!-- ********************************************************************************************** -->
-<req method="post" path="/states/items/new" isArrow>
+<req method="post" path="/states/items" isArrow>
 
 Данный запрос выполняет создание одного состояния.
 В теле запроса должен передаваться объект с параметрами.
@@ -89,7 +89,7 @@ Content-Type: application/json; charset=UTF-8
 **Пример запроса:**
 
 ```json
-POST {baseURL}/states/items/new HTTP/1.1
+POST {baseURL}/states/items HTTP/1.1
 Content-Type: application/json
 
 {
@@ -188,7 +188,7 @@ HTTP/1.1 204 No Content
 </req>
 
 <!-- ********************************************************************************************** -->
-<req method="post" path="/states/categories/new" isArrow>
+<req method="post" path="/states/categories" isArrow>
 
 Данный запрос выполняет создание одной категории состояния.
 В теле запроса должен передаваться объект с параметрами.
@@ -197,7 +197,7 @@ HTTP/1.1 204 No Content
 **Пример запроса:**
 
 ```json
-POST {baseURL}/states/categories/new HTTP/1.1
+POST {baseURL}/states/categories HTTP/1.1
 Content-Type: application/json
 
 {

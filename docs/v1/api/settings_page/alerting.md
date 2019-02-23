@@ -49,7 +49,7 @@ Content-Type: application/json; charset=UTF-8
 <!-- ********************************************************************************************** 
 
 -->
-<req method="post" path="/alertingchannels/new" isArrow>
+<req method="post" path="/alertingchannels" isArrow>
 
 Данный запрос выполняет создание одного канала оповещений.
 В теле запроса должен передаваться объект с параметрами.
@@ -58,7 +58,7 @@ Content-Type: application/json; charset=UTF-8
 **Пример запроса:**
 
 ```json
-POST {baseURL}/alertingchannels/new HTTP/1.1
+POST {baseURL}/alertingchannels HTTP/1.1
 Content-Type: application/json
 
 {
@@ -69,8 +69,6 @@ Content-Type: application/json
   "emails": ["alex@company.com", "kos@gmail.com"]
 }
 ```
-
-Тело ответа содержит дублирующий объект с добавлением поля `"id"`, по которому клиентское приложение может обращаться для изменения созданного ресурса.
 
 **Пример ответа (STATUS 201):**
 

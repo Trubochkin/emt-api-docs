@@ -67,7 +67,7 @@ Content-Type: application/json; charset=UTF-8
 </req>
 
 <!-- ********************************************************************************************** -->
-<req method="post" path="/products/items/new" isArrow>
+<req method="post" path="/products/items" isArrow>
 
 Данный запрос выполняет создание одного продукта. 
 В теле запроса должен передаваться объект с параметрами. 
@@ -76,7 +76,7 @@ Content-Type: application/json; charset=UTF-8
 **Пример запроса:**
 
 ```json
-POST {baseURL}/products/items/new HTTP/1.1
+POST {baseURL}/products/items HTTP/1.1
 Content-Type: application/json
 
 {
@@ -175,7 +175,7 @@ HTTP/1.1 204 No Content
 </req>
 
 <!-- ********************************************************************************************** -->
-<req method="post" path="/products/categories/new" isArrow>
+<req method="post" path="/products/categories" isArrow>
 
 Данный запрос выполняет создание одной категории продуктов. В теле запроса должен передаваться объект с параметрами.
 Поле `"id"` должно формироваться на клиентской стороне. Для этого нужно из существующего списка категорий продуктов взять `"id"` с самым высоким номером и, прибавив к нему единицу, вставить в передаваемый объект. Если список пустой, то в поле `"id"` записывается `1`.
@@ -183,7 +183,7 @@ HTTP/1.1 204 No Content
 **Пример запроса:**
 
 ```json
-POST {baseURL}/products/categories/new HTTP/1.1
+POST {baseURL}/products/categories HTTP/1.1
 Content-Type: application/json
 
 {

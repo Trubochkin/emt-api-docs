@@ -1,0 +1,43 @@
+{
+  "factoriesNodes": [
+    {
+      "id": 1,
+      "name": "Bakery",
+      "comment": "comment text for Factory1",
+      "collapsable": false
+    }
+  ],
+  "processesNodes": [
+    {
+      "id": 10,
+      "name": "Bread line",
+      "comment": "comment text for Process1",
+      "parentId": 1,
+      "collapsable": false
+    }
+  ],
+  "unitsNodes": [
+    {
+      "id": 20,
+      "name": "Oven 1",
+      "comment": "comment text for Unit1",
+      "parentId": 10,
+      "collapsable": false
+    }
+  ],
+  "measuringItems": [
+    {
+      "id": 1,
+      "parentNodeId": 20,
+      "type": "sensor",
+      "name": "Humidity",
+      "um": "%"
+    },
+    {
+      "id": 16,
+      "parentNodeId": 20,
+      "type": "state",
+      "name": "State for Bread"
+    }
+  ]
+}
